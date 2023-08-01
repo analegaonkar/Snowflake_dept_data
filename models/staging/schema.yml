@@ -1,0 +1,8 @@
+
+version: 2
+
+models:
+    - name: stg_dept_tbl
+      description: restructure raw_dept_tbl
+    - name: stg_dept_head_tbl
+      description: restructure raw_dept_head_tbl

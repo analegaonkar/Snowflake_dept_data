@@ -1,0 +1,9 @@
+
+version: 2
+
+models:
+    - name: dim_dept_tbl
+      description:  build dim_dept_tbl
+    - name: dim_dept_head_tbl
+      description:  build dim_dept_head_tbl
+
