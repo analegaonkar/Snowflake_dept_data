@@ -1,3 +1,7 @@
+{{
+config (materialized = 'table')
+}}
+
 with 
 
 cte_dept_head_tbl as
@@ -8,7 +12,7 @@ select row_number() over (order by dept_id) as dept_head_key
 , DEPT_HEAD_ID
 , DEPT_HEAD_NAME
 , to_timestamp_ntz(CURRENT_TIMESTAMP()) as created_datetime
-from STG_DEPT_HEAD_TBL
+from {{ ref("stg_dept_head_tbl") }}
 ),
 
 cte_latest_active_row as
