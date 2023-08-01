@@ -38,6 +38,4 @@ models:
       materialized: view
     staging:
       materialized: view
-    core:
-      Generic:
-        materialized: table
+
