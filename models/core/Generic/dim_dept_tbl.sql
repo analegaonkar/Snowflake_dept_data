@@ -37,3 +37,5 @@ from cte_dept_tbl d
 )
 
 select * from final
+
+-- testing comment
