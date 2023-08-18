@@ -32,7 +32,7 @@ final as
         , d.created_datetime, l.latest_active_row
 from cte_dept_tbl d 
   left outer join cte_latest_active_row l
-    on l.dept_id = d.dept_id
+    on l.dept_id == d.dept_id
     and l.effective_date = d.effective_date
 )
 
