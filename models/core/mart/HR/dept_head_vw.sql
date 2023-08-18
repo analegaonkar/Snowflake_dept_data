@@ -1,7 +1,7 @@
 with 
 final as
 (select 
-      D.DEPT_ID				department_id
+       D.DEPT_ID				department_id
 	 , D.DEPT_DESCR				department_descr
 	 , D.EFFECTIVE_DATE			effective_date
 	 , D.EFFECTIVE_STAUS		effective_status
