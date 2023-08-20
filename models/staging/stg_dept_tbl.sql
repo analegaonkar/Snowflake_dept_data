@@ -3,4 +3,4 @@ select DEPARTMENT_ID        dept_id
     , EFF_STATUS            effective_status
     , DESCR50               dept_descr
     , EXTRACT_DATETIME      extracted_datetime
-  from {{ source('hris_peoplesoft','DEPT_TBL')}}
+  from {{ source('hris_peoplesoft','dept_tbl')}}

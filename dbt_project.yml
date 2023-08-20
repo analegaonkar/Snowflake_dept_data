@@ -38,5 +38,14 @@ models:
       +database: staging
       +schema: staging
       +materialized: view
+    Analytics:
+       Datawarehouse: 
+        +database: analytics     
+        +schema: datawarehouse        
+        +materialized: table
+       Marts:
+        +database: analytics     
+        +schema: marts
+        +materialized: view
       
 

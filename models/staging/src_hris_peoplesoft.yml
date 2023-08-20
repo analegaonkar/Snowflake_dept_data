@@ -5,5 +5,5 @@ sources:
     database: raw
     schema: peoplesoft_hr
     tables:
-      - name: DEPT_HEAD_TBL
-      - name: DEPT_TBL
+      - name: dept_head_tbl
+      - name: dept_tbl

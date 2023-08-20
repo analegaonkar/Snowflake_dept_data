@@ -7,10 +7,10 @@ with
 cte_dept_tbl as
 (
 select row_number() over (order by dept_id) as deptid_key
-, DEPT_ID
-, EFFECTIVE_DATE
+, dept_id
+, effective_date
 , effective_status
-, DEPT_DESCR
+, dept_descr
 , to_timestamp_ntz(CURRENT_TIMESTAMP()) as created_datetime
 from {{ ref("stg_dept_tbl") }}
 ),
@@ -24,17 +24,17 @@ cte_latest_active_row as
 
 final as
 (
-    select d.deptid_key
-        , d.DEPT_ID
-        , d.EFFECTIVE_DATE
+    select {{ dbt_utils.generate_surrogate_key(['d.dept_id','d.effective_date']) }} as dept_key
+        , d.dept_id
+        , d.effective_date
         , d.effective_status
-        , d.DEPT_DESCR 
+        , d.dept_descr 
         , d.created_datetime
-        , l1.latest_active_row
+        , l.latest_active_row
 from cte_dept_tbl d 
-  left outer join cte_latest_active_row l1
-    on l1.dept_id = d.dept_id
-    and l1.effective_date = d.effective_date
+  left outer join cte_latest_active_row l
+    on l.dept_id = d.dept_id
+    and l.effective_date = d.effective_date
 )
 
 select * from final
