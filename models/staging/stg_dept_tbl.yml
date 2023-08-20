@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: DEPT_TBL
+    description: One active record per dept. Dept descr can change over time.
+    columns:
+      - name: department_id
+        tests:
+          - not_null
+      - name: effective_date
+        tests:
+          - not_null
+      - name: descr50
+      - name: effective_status
+        tests:
+          - accepted_values:
+              name: unexpected_status
+              values: 
+                - R

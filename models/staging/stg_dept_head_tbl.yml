@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: DEPT_HEAD_TBL
+    description: One active record per dept per head. Dept head can change over time.
+    columns:
+      - name: department_id
+        description: One of the 3 primary key of the dept head table
+        tests:
+          - not_null
+          - relationships:
+              field: department_id
+              to: ref('DEPT_TBL')
+      - name: effective_date
+        description: one of the 3 primary key of the dept head table. A new effective date entry for same department id is done if department head changes
+        tests:
+          - not_null
+      - name: department_function_head_id
+        description: one of the 3 primary key of the dept head table.
+        tests:
+          - not_null
+      - name: department_function_head
+        description: Note that the head can change over time

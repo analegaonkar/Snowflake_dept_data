@@ -1,7 +1,0 @@
-sources:
-  - name: dept
-    database: MANAGE_DB
-    schema: EXTERNAL_STAGE
-    tables:
-      - name: RAW_DEPT_TBL
-      - name: RAW_DEPT_HEAD_TBL
