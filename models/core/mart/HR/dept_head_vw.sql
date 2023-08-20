@@ -4,7 +4,7 @@ final as
        D.DEPT_ID				department_id
 	 , D.DEPT_DESCR				department_descr
 	 , D.EFFECTIVE_DATE			effective_date
-	 , D.EFFECTIVE_STAUS		effective_status
+	 , D.effective_status		effective_status
 	 , H.DEPT_HEAD_ID           department_function_head_id
 	 , H.DEPT_HEAD_NAME         department_function_head
        FROM {{ ref('dim_dept_tbl') }} D				

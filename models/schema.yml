@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_dept_tbl
+    description: One active record per dept. Dept descr can change over time.
+    columns:
+      - name: dept_id
+        tests:
+          - not_null
+      - name: effective_date
+        tests:
+          - not_null
+      - name: effective_status
+        tests:
+          - accepted_values:
+              values: [A,I]

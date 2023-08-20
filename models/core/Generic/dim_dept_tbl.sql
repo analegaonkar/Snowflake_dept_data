@@ -9,7 +9,7 @@ cte_dept_tbl as
 select row_number() over (order by dept_id) as deptid_key
 , DEPT_ID
 , EFFECTIVE_DATE
-, EFFECTIVE_STAUS
+, effective_status
 , DEPT_DESCR
 , to_timestamp_ntz(CURRENT_TIMESTAMP()) as created_datetime
 from {{ ref("stg_dept_tbl") }}
@@ -27,7 +27,7 @@ final as
     select d.deptid_key
         , d.DEPT_ID
         , d.EFFECTIVE_DATE
-        , d.EFFECTIVE_STAUS
+        , d.effective_status
         , d.DEPT_DESCR 
         , d.created_datetime
         , l1.latest_active_row
