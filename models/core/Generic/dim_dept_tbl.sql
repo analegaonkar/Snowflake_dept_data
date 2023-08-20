@@ -29,11 +29,12 @@ final as
         , d.EFFECTIVE_DATE
         , d.EFFECTIVE_STAUS
         , d.DEPT_DESCR 
-        , d.created_datetime, l.latest_active_row
+        , d.created_datetime
+        , l1.latest_active_row
 from cte_dept_tbl d 
-  left outer join cte_latest_active_row l
-    on l.dept_id = d.dept_id
-    and l.effective_date = d.effective_date
+  left outer join cte_latest_active_row l1
+    on l1.dept_id = d.dept_id
+    and l1.effective_date = d.effective_date
 )
 
 select * from final
