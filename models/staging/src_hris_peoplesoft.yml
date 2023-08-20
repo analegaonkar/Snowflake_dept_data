@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: hris_peoplesoft
+    database: raw
+    schema: peoplesoft_hr
+    tables:
+      - name: dept_head_tbl
+      - name: dept_tbl
